@@ -1,10 +1,10 @@
-package vehicle;
+package list2;
 
 import org.junit.*;
 import static org.junit.Assert.*;
 import java.util.*;
 
-import br.edu.fatecfranca.vehicle.Vehicle;
+import br.edu.fatecfranca.list2.Vehicle;
 
 public class VehicleTest {
 	private Vehicle vehicle;
