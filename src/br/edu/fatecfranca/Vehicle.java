@@ -1,8 +1,6 @@
 
 package br.edu.fatecfranca.vehicle;
 
-import javax.swing.JOptionPane;
-
 public class Vehicle {
 	public static String ownerName;
 	public int wheels;
