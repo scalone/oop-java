@@ -1,24 +1,43 @@
 package vehicle;
 
+import org.junit.*;
 import static org.junit.Assert.*;
-
-import org.junit.Test;
+import java.util.*;
 
 import br.edu.fatecfranca.vehicle.Vehicle;
 
 public class VehicleTest {
-	@Test
-	public void testCreation() {
-		Vehicle vehicle  = new Vehicle();
-		//vehicle.type     = JOptionPane.showInputDialog("Type: ");
-		//vehicle.color    = JOptionPane.showInputDialog("Color: ");
-		//vehicle.year     = Integer.parseInt(JOptionPane.showInputDialog("Year: "));
-		//vehicle.wheels   = Integer.parseInt(JOptionPane.showInputDialog("Wheels: "));
+	private Vehicle vehicle;
 
-		//vehicle.setType(JOptionPane.showInputDialog("Type: "));
+	@Before public void setUp() {
+		vehicle = new Vehicle();
+	}
 
+	@Test public void testCreation() {
 		assertEquals(2004, vehicle.year);
-		//JOptionPane.showMessageDialog(null, vehicle.show());
+	}
+
+	@Test public void testCreationWheelsDefaultValues() {
+		assertEquals(4, vehicle.wheels);
+	}
+
+	@Test public void testCreationYearDefaultValues() {
+		assertEquals(2004, vehicle.year);
+	}
+
+	@Test public void testCreationColorDefaultValues() {
+		assertEquals("blank", vehicle.color);
+	}
+
+	@Test public void testCreationTypeDefaultValues() {
+		assertEquals("hat", vehicle.type);
+	}
+
+	@Test public void testSetType() {
+		String newType = "Pickup";
+		vehicle.setType(newType);
+
+		assertEquals(newType, vehicle.type);
 	}
 }
 
