@@ -2,35 +2,36 @@
 package br.edu.fatecfranca.list4.e1;
 
 public class Reserve {
-	private int id, flight_id;
+	private int id;
+	private	Flight flight;
 
-	public Reserve(int id, int flight_id) {
-		this.id        = id;
-		this.flight_id = flight_id;
+	public Reserve(int id, Flight flight) {
+		this.id     = id;
+		this.flight = flight;
 	}
 
 	public Reserve() {
-		this(1, 1);
+		this(1, new Flight());
 	}
 
 	public int getId() {
 		return this.id;
 	}
 
-	public int getFlightId() {
-		return this.flight_id;
-	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
 
-	public void setFlightId(int flight_id) {
-		this.flight_id = flight_id;
+	public void setFlight(Flight flight) {
+		this.flight = flight;
+	}
+
+	public Flight getFlight() {
+		return this.flight;
 	}
 
 	public String show() {
 		return "Reserve Id: " + this.id +
-			" Flight Id: " + this.flight_id;
+			" Flight Id: " + this.flight.getId();
 	}
 }

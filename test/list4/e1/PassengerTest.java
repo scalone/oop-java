@@ -8,17 +8,27 @@ import br.edu.fatecfranca.list4.e1.*;
 
 public class PassengerTest {
 	private Passenger passenger;
+	private Reserve reserve;
 
 	@Before public void setUp() {
 		passenger = new Passenger();
+		reserve = new Reserve(2, new Flight());
 	}
 
 	@Test public void testCreationName() {
 		assertEquals("Daniel", passenger.getName());
 	}
 
-	@Test public void testCreationReserveId() {
-		assertEquals(1, passenger.getReserveId());
+	@Test public void testSetReserve() {
+		passenger.setReserve(reserve);
+
+		assertEquals(2, passenger.getReserve().getId());
+	}
+
+	@Test public void testGetReserve() {
+		passenger.setReserve(reserve);
+
+		assertEquals(reserve, passenger.getReserve());
 	}
 
 	@Test public void testShow() {

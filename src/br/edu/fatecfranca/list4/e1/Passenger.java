@@ -3,36 +3,36 @@ package br.edu.fatecfranca.list4.e1;
 
 public class Passenger {
 	private String name;
-	private int reserve_id;
+	private Reserve reserve;
 
-	public Passenger(int reserve_id, String name) {
-		this.reserve_id = reserve_id;
-		this.name       = name;
+	public Passenger(Reserve reserve, String name) {
+		this.reserve = reserve;
+		this.name    = name;
 	}
 
 	public Passenger() {
-		this(1, "Daniel");
+		this(new Reserve(), "Daniel");
 	}
 
 	public String getName() {
 		return this.name;
 	}
 
-	public int getReserveId() {
-		return this.reserve_id;
+	public Reserve getReserve() {
+		return this.reserve;
 	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	public void setReserveId(int reserve_id) {
-		this.reserve_id = reserve_id;
+	public void setReserve(Reserve reserve) {
+		this.reserve = reserve;
 	}
 
 	public String show() {
 		return "Passenger Name: " + this.name +
-			" Reserve Id: " + this.reserve_id;
+			" Reserve Id: " + this.reserve.getId();
 	}
 }
 
