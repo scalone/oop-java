@@ -50,5 +50,13 @@ public class BusTest {
 		assertEquals(bus.getNumber(), bus2.getNumber());
 		assertEquals(bus.getPassengerQuantity(), bus2.getPassengerQuantity());
 	}
+
+	@Test public void testEmitPassenger() {
+		bus.createPassenger(2, "Daniel");
+		bus.createPassenger(3, "George");
+
+		String list = bus.getPassengers().get(0).show() + "\n" + bus.getPassengers().get(1).show() + "\n";
+		assertEquals(list, bus.emitPassengers());
+	}
 }
 

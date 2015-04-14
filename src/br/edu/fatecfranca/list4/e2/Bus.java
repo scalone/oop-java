@@ -57,5 +57,14 @@ public class Bus {
 		this.passengerQuantity += 1;
 		this.passengers.add(passenger);
 	}
+
+	public String emitPassengers() {
+		String list = "";
+		for(Passenger passenger: this.passengers) {
+			list = list.concat(passenger.show() + "\n");
+		}
+
+		return list;
+	}
 }
 
