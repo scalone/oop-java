@@ -20,6 +20,9 @@ public class PassengerTest {
 	@Test public void testCreationName() {
 		assertEquals("Daniel", passenger.getName());
 	}
+
+	@Test public void testShow() {
+		assertEquals("Place: 10; Name: Daniel", passenger.show());
 	}
 }
 

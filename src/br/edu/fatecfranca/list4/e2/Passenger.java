@@ -29,5 +29,9 @@ public class Passenger {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public String show() {
+		return "Place: " + this.place + "; Name: " + this.name;
+	}
 }
 
