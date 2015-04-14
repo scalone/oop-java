@@ -5,23 +5,35 @@ import java.util.ArrayList;
 public class Bus {
 	private int passengerQuantity;
 	private String number;
-	private ArrayList<Passenger> passengers = new ArrayList<Passenger>();
+	private ArrayList<Passenger> passengers;
+	private static ArrayList<Bus> buses = new ArrayList<Bus>();
 
 	public Bus(int passengerQuantity, String number) {
 		this.passengerQuantity = passengerQuantity;
 		this.number            = number;
+		this.passengers = new ArrayList<Passenger>();
+
+		Bus.addBus(this);
 	}
 
 	public Bus() {
 		this(0, "1020-10");
 	}
 
-	public int getPassengerQuantity() {
-		return this.passengerQuantity;
+	public static void addBus(Bus bus) {
+		buses.add(bus);
 	}
 
-	public void setPassengerQuantity(int passengerQuantity) {
-		this.passengerQuantity = passengerQuantity;
+	public static ArrayList<Bus> getBuses() {
+		return buses;
+	}
+
+	public static Bus getBus() {
+		return getBuses().get(0);
+	}
+
+	public int getPassengerQuantity() {
+		return this.passengerQuantity;
 	}
 
 	public String getNumber() {
@@ -38,6 +50,11 @@ public class Bus {
 
 	public void createPassenger(int place, String name) {
 		Passenger passenger = new Passenger(place, name);
+		addPassenger(passenger);
+	}
+
+	public void addPassenger(Passenger passenger) {
+		this.passengerQuantity += 1;
 		this.passengers.add(passenger);
 	}
 }

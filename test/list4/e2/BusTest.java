@@ -28,6 +28,27 @@ public class BusTest {
 
 		assertEquals("Luis", passenger.getName());
 		assertEquals(2, passenger.getPlace());
+		assertEquals(1, bus.getPassengerQuantity());
+	}
+
+	@Test public void testAddPassenger() {
+		assertEquals(0, bus.getPassengerQuantity());
+		bus.addPassenger(new Passenger());
+
+		assertEquals(1, bus.getPassengerQuantity());
+		assertEquals(1, bus.getPassengers().size());
+	}
+
+	@Test public void testBusList() {
+		Bus bus2 = Bus.getBuses().get(0);
+		assertEquals(bus.getNumber(), bus2.getNumber());
+		assertEquals(bus.getPassengerQuantity(), bus2.getPassengerQuantity());
+	}
+
+	@Test public void testGetBus() {
+		Bus bus2 = Bus.getBus();
+		assertEquals(bus.getNumber(), bus2.getNumber());
+		assertEquals(bus.getPassengerQuantity(), bus2.getPassengerQuantity());
 	}
 }
 
