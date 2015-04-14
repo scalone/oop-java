@@ -66,5 +66,9 @@ public class Bus {
 
 		return list;
 	}
+
+	public String show() {
+		return "Bus Number: " + this.getNumber() + "; Quantity of Passengers: " + this.getPassengerQuantity();
+	}
 }
 

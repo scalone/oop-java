@@ -58,5 +58,9 @@ public class BusTest {
 		String list = bus.getPassengers().get(0).show() + "\n" + bus.getPassengers().get(1).show() + "\n";
 		assertEquals(list, bus.emitPassengers());
 	}
+
+	@Test public void testShow() {
+		assertEquals("Bus Number: 1020-10; Quantity of Passengers: 0", bus.show());
+	}
 }
 
