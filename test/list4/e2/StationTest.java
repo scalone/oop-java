@@ -51,4 +51,12 @@ public class StationTest {
 		assertEquals(bus.getNumber(), bus2.getNumber());
 		assertEquals(bus.getPassengerQuantity(), bus2.getPassengerQuantity());
 	}
+
+	@Test public void testEmitBus() {
+		station.createBus(0, "30409");
+		station.createBus(2, "90489-4");
+
+		String list = station.getBuses().get(0).show() + "\n" + station.getBuses().get(1).show() + "\n";
+		assertEquals(list, station.emitBuses());
+	}
 }

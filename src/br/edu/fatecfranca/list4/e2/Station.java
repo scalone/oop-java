@@ -61,4 +61,12 @@ public class Station {
 		Bus bus = new Bus(passengerQuantity, number);
 		addBus(bus);
 	}
+
+	public String emitBuses() {
+		String list = "";
+		for(Bus bus: buses) {
+			list = list.concat(bus.show() + "\n");
+		}
+		return list;
+	}
 }
