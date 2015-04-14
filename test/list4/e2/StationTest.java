@@ -39,4 +39,16 @@ public class StationTest {
 		station.addBus(new Bus());
 		assertEquals(1, station.getBusQuantity());
 	}
+
+	@Test public void testGetBusByNumber() {
+		station.createBus(2, "30409-6");
+		station.createBus(0, "30409");
+		station.createBus(2, "90489-4");
+
+		Bus bus = station.getBuses().get(1);
+		Bus bus2 = station.getBus("30409");
+
+		assertEquals(bus.getNumber(), bus2.getNumber());
+		assertEquals(bus.getPassengerQuantity(), bus2.getPassengerQuantity());
+	}
 }

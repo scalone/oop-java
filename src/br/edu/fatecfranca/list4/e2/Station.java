@@ -43,6 +43,15 @@ public class Station {
 		return this.buses;
 	}
 
+	public Bus getBus(String number) {
+		for(Bus bus: this.buses) {
+			if(bus.getNumber().equals(number)) {
+				return bus;
+			}
+		}
+		return null;
+	}
+
 	public void addBus(Bus bus) {
 		this.busQuantity += 1;
 		this.buses.add(bus);

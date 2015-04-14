@@ -28,8 +28,13 @@ public class Bus {
 		return buses;
 	}
 
-	public static Bus getBus(int number) {
-		return getBuses().get(number);
+	public static Bus getBus(String number) {
+		for(Bus bus: buses) {
+			if (bus.getNumber().equals(number)) {
+				return bus;
+			}
+		}
+		return null;
 	}
 
 	public int getPassengerQuantity() {

@@ -46,7 +46,7 @@ public class BusTest {
 	}
 
 	@Test public void testGetBus() {
-		Bus bus2 = Bus.getBus(0);
+		Bus bus2 = Bus.getBus("1020-10");
 		assertEquals(bus.getNumber(), bus2.getNumber());
 		assertEquals(bus.getPassengerQuantity(), bus2.getPassengerQuantity());
 	}
