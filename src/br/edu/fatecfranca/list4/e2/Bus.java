@@ -28,8 +28,8 @@ public class Bus {
 		return buses;
 	}
 
-	public static Bus getBus() {
-		return getBuses().get(0);
+	public static Bus getBus(int number) {
+		return getBuses().get(number);
 	}
 
 	public int getPassengerQuantity() {
