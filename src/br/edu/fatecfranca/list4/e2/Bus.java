@@ -1,9 +1,11 @@
 
 package br.edu.fatecfranca.list4.e2;
+import java.util.ArrayList;
 
 public class Bus {
 	private int passengerQuantity;
 	private String number;
+	private ArrayList<Passenger> passengers = new ArrayList<Passenger>();
 
 	public Bus(int passengerQuantity, String number) {
 		this.passengerQuantity = passengerQuantity;
@@ -28,6 +30,15 @@ public class Bus {
 
 	public void setNumber(String number) {
 		this.number = number;
+	}
+
+	public ArrayList<Passenger> getPassengers() {
+		return this.passengers;
+	}
+
+	public void createPassenger(int place, String name) {
+		Passenger passenger = new Passenger(place, name);
+		this.passengers.add(passenger);
 	}
 }
 

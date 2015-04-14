@@ -20,6 +20,14 @@ public class BusTest {
 	@Test public void testCreationNumber() {
 		assertEquals("1020-10", bus.getNumber());
 	}
+
+	@Test public void testCreatePassenger() {
+		bus.createPassenger(2, "Luis");
+		ArrayList<Passenger> passengers = bus.getPassengers();
+		Passenger passenger = passengers.get(0);
+
+		assertEquals("Luis", passenger.getName());
+		assertEquals(2, passenger.getPlace());
 	}
 }
 
