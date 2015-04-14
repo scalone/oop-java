@@ -31,7 +31,7 @@ public class BusTest {
 		assertEquals(1, bus.getPassengerQuantity());
 	}
 
-	@Test public void testAddPassenger() {
+	@Test public void testAddPassengerQuantity() {
 		assertEquals(0, bus.getPassengerQuantity());
 		bus.addPassenger(new Passenger());
 
