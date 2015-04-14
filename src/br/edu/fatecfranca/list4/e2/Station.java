@@ -20,10 +20,6 @@ public class Station {
 		return this.busQuantity;
 	}
 
-	public void setBusQuantity(int busQuantity) {
-		this.busQuantity = busQuantity;
-	}
-
 	public String getName() {
 		return this.name;
 	}
