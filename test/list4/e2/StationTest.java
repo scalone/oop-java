@@ -24,4 +24,19 @@ public class StationTest {
 	@Test public void testCreationCity() {
 		assertEquals("Washington/DC", station.getCity());
 	}
+
+	@Test public void testCreateBus() {
+		station.createBus(0, "1020-10");
+		ArrayList<Bus> buses = station.getBuses();
+		Bus bus = buses.get(0);
+
+		assertEquals("1020-10", bus.getNumber());
+		assertEquals(0, bus.getPassengerQuantity());
+	}
+
+	@Test public void testAddBusQuantity() {
+		assertEquals(0, station.getBusQuantity());
+		station.addBus(new Bus());
+		assertEquals(1, station.getBusQuantity());
+	}
 }

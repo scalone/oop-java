@@ -1,15 +1,18 @@
 
 package br.edu.fatecfranca.list4.e2;
+import java.util.ArrayList;
 
 public class Station {
 	private int busQuantity;
 	private String name;
 	private String city;
+	private ArrayList<Bus> buses;
 
 	public Station(int busQuantity, String name, String city) {
 		this.busQuantity = busQuantity;
 		this.name        = name;
 		this.city        = city;
+		this.buses       = new ArrayList<Bus> ();
 	}
 
 	public Station() {
@@ -34,5 +37,19 @@ public class Station {
 
 	public void setCity(String city) {
 		this.city = city;
+	}
+
+	public ArrayList<Bus> getBuses() {
+		return this.buses;
+	}
+
+	public void addBus(Bus bus) {
+		this.busQuantity += 1;
+		this.buses.add(bus);
+	}
+
+	public void createBus(int passengerQuantity, String number) {
+		Bus bus = new Bus(passengerQuantity, number);
+		addBus(bus);
 	}
 }
