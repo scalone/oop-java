@@ -65,7 +65,7 @@ public class Station {
 	public String emitBuses() {
 		String list = "";
 		for(Bus bus: buses) {
-			list = list.concat(bus.show() + "\n");
+			list = list.concat(bus.show() + "\n" + bus.emitPassengers());
 		}
 		return list;
 	}

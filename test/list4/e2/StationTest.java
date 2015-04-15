@@ -56,7 +56,15 @@ public class StationTest {
 		station.createBus(0, "30409");
 		station.createBus(2, "90489-4");
 
-		String list = station.getBuses().get(0).show() + "\n" + station.getBuses().get(1).show() + "\n";
+		Bus bus = station.getBuses().get(0);
+		bus.addPassenger(new Passenger());
+		bus.addPassenger(new Passenger());
+		Bus bus2 = station.getBuses().get(1);
+		bus2.addPassenger(new Passenger());
+		bus2.addPassenger(new Passenger());
+
+		String list = bus.show() + "\n" + bus.emitPassengers() +
+			bus2.show() + "\n" + bus2.emitPassengers();
 		assertEquals(list, station.emitBuses());
 	}
 }
