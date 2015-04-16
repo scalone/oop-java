@@ -7,16 +7,32 @@ public class Station {
 	private String name;
 	private String city;
 	private ArrayList<Bus> buses;
+	private static ArrayList<Station> stations = new ArrayList<Station>();
 
 	public Station(int busQuantity, String name, String city) {
 		this.busQuantity = busQuantity;
 		this.name        = name;
 		this.city        = city;
 		this.buses       = new ArrayList<Bus> ();
+
+		addStation(this);
 	}
 
 	public Station() {
 		this(0, "Principal Station", "Washington/DC");
+	}
+
+	public static void addStation(Station station) {
+		stations.add(station);
+	}
+
+	public static Station getStation(String name) {
+		for(Station station: stations) {
+			if (station.getName().equals(name)) {
+				return station;
+			}
+		}
+		return null;
 	}
 
 	public int getBusQuantity() {

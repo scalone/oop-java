@@ -67,4 +67,13 @@ public class StationTest {
 			bus2.show() + "\n" + bus2.emitPassengers();
 		assertEquals(list, station.emitBuses());
 	}
+
+	@Test public void testGetStation() {
+		Station station = new Station(30, "Principal", "New York");
+		Station station2 = Station.getStation("Principal");
+
+		assertEquals(station.getName(), station2.getName());
+		assertEquals(station.getCity(), station2.getCity());
+		assertEquals(station.getBusQuantity(), station2.getBusQuantity());
+	}
 }
