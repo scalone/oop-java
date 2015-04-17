@@ -13,10 +13,6 @@ public class StationTest {
 		station = new Station();
 	}
 
-	@Test public void testCreationBusQuantity() {
-		assertEquals(0, station.getBusQuantity());
-	}
-
 	@Test public void testCreationName() {
 		assertEquals("Principal Station", station.getName());
 	}
@@ -69,11 +65,23 @@ public class StationTest {
 	}
 
 	@Test public void testGetStation() {
-		Station station = new Station(30, "Principal", "New York");
-		Station station2 = Station.getStation("Principal");
+		Station station2 = Station.getStation("Principal Station");
 
 		assertEquals(station.getName(), station2.getName());
 		assertEquals(station.getCity(), station2.getCity());
-		assertEquals(station.getBusQuantity(), station2.getBusQuantity());
+	}
+
+	@Test public void testCreatePassengerOfBus() {
+		station.createBus(0, "1010-50");
+		Bus bus = station.getBus("1010-50");
+		Passenger passenger = station.createPassengerBus(bus, 2, "Luis");
+
+		assertEquals("Luis", bus.getPassengers().get(0).getName());
+		assertEquals(2, bus.getPassengers().get(0).getPlace());
+	}
+
+	@Test public void testCreationBusQuantity() {
+		assertEquals(0, station.getBusQuantity());
 	}
 }
+

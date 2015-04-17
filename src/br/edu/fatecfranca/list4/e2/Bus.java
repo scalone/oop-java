@@ -75,5 +75,14 @@ public class Bus {
 	public String show() {
 		return "Bus Number: " + this.getNumber() + "; Quantity of Passengers: " + this.getPassengerQuantity();
 	}
+
+	public Passenger getPassenger(String name) {
+		for(Passenger passenger: passengers) {
+			if (passenger.getName().equals(name)) {
+				return passenger;
+			}
+		}
+		return null;
+	}
 }
 

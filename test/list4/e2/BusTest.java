@@ -62,5 +62,13 @@ public class BusTest {
 	@Test public void testShow() {
 		assertEquals("Bus Number: 1020-10; Quantity of Passengers: 0", bus.show());
 	}
+
+	@Test public void testGetPassenger() {
+		bus.createPassenger(2, "Daniel");
+		Passenger passenger = bus.getPassenger("Daniel");
+
+		assertEquals("Daniel", passenger.getName());
+		assertEquals(2, passenger.getPlace());
+	}
 }
 

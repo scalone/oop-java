@@ -85,4 +85,10 @@ public class Station {
 		}
 		return list;
 	}
+
+	public Passenger createPassengerBus(Bus bus, int place, String name) {
+		bus.createPassenger(place, name);
+		return bus.getPassenger(name);
+	}
 }
+
