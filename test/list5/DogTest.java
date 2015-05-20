@@ -39,5 +39,19 @@ public class DogTest {
 		dog.setBarkLow();
 		assertEquals("au au", dog.speak());
 	}
+
+	@Test public void testGetSteps() {
+		assertEquals(0, dog.getSteps());
+	}
+
+	@Test public void testWalk() {
+		assertEquals(0, dog.getSteps());
+		dog.walk();
+		assertEquals(1, dog.getSteps());
+	}
+
+	@Test public void testInfo() {
+		assertEquals("Dog: Whale, steps: 0", dog.info());
+	}
 }
 
