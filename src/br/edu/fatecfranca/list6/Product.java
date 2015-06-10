@@ -31,6 +31,18 @@ public class Product {
 		this.state = state;
 	}
 
+	public String toString() {
+		String value = "Product Serial: " +
+			this.serial + " Volume: " +
+			this.volume + " Test: ";
+
+		if (this.state.equals("Approved")) {
+			return value + "Ok";
+		} else {
+			return value + "Not Ok";
+		}
+	}
+
 	public boolean testUnit() throws Exception {
 		if (this.state.equals("Not Tested")) {
 			if (doTest()) {

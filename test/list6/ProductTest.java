@@ -53,5 +53,18 @@ public class ProductTest {
 		assertEquals("Already Tested", exception.getMessage());
 		assertTrue(exception instanceof Exception);
 	}
+
+	@Test public void testToStringTrue() throws Exception {
+		product.setChance(100);
+		product.testUnit();
+		assertEquals("Product Serial: 1 Volume: 5 Test: Ok", product.toString());
+	}
+
+	@Test public void testToStringFalse() throws Exception {
+		product.setChance(0);
+		product.testUnit();
+		assertEquals("Product Serial: 1 Volume: 5 Test: Not Ok", product.toString());
+	}
+
 }
 
